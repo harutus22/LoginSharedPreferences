@@ -28,6 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 LoginActivity.MY_SHARED_PREFERENCE, MODE_PRIVATE);
         sharedPreferences.edit().clear().apply();
         startActivity(new Intent(this, LoginActivity.class).
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 }
