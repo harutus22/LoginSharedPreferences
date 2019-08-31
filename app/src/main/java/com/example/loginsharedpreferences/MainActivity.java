@@ -1,5 +1,6 @@
 package com.example.loginsharedpreferences;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 LoginActivity.MY_SHARED_PREFERENCE, MODE_PRIVATE);
         sharedPreferences.edit().clear().apply();
-        onBackPressed();
+        startActivity(new Intent(this, LoginActivity.class).
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 }
